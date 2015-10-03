@@ -1,0 +1,102 @@
+body {
+    font-family: 'Varela Round', sans-serif;
+    font-size: 9pt;
+}
+
+.resume .header {
+    width: 99%;
+}
+
+.resume .header .main_info {
+    float: left;
+}
+
+.resume .header .main_info .name {
+    font-weight: bold;
+}
+
+.resume .header .main_info {
+    font-family: 'Open Sans Mono', monospace;
+}
+
+.resume .body {
+    position: absolute;
+    top: 1in;
+    width: 99%;
+}
+
+.resume .body h1 {
+    font-size: 13pt;
+    margin-bottom: 0.5em;
+}
+
+.resume .body .rcol, .resume .body .lcol {
+    width: 48%;
+}
+
+.resume .body .rcol {
+    float: right;
+    text-align: left;
+}
+
+.resume .body .lcol {
+    float: left;
+    text-align: left;
+}
+
+.resume .body .entry {
+    margin-bottom: 0px;
+}
+
+.resume .body .entry .what, .resume .body .project .name {
+    font-weight: bold;
+    font-size: 9pt;
+    text-decoration: underline;
+    margin-bottom: 4px;
+    margin-top: 0.75em;
+}
+
+/*.resume .body .entry .institution {
+    
+}*/
+
+.resume .body .entry .volunteer_tag {
+    font-style: italic;
+}
+
+.resume .body .entry .when {
+    font-style: italic;
+}
+
+.resume .body .project .url {
+    font-family: 'Open Sans Mono', monospace;
+}
+
+.resume .body .project .description {
+}
+
+.resume .body .projects {
+    margin-top: 2em;
+}
+
+.resume .body .entry ul {
+    padding-left: 2em;
+}
+
+.resume .body .entry .blurb {
+    list-style-type: square;
+}
+
+.resume .body .calltoaction {
+    margin-top: 1in;
+    font-family: monospace;
+    font-size: 12pt;
+    text-align: left;
+    width: 95%;
+    line-height: 2;
+}
+
+.resume .body .calltoaction em {
+    font-weight: bold;
+    font-style: normal;
+}

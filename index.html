@@ -1,0 +1,46 @@
+---
+layout: default
+---
+<div id="home">
+  <header>
+    You can find a static resume <a href="./resume.pdf">here</a>.
+  </header>
+  <div class="leftcol">
+    <h1>Professional and Volunteer Experience</h1>
+    <ul class="jobs">
+      {% for job in site.jobs reversed %}
+      <li class="job">
+	<span class="jobtitle"><a href='{{ job.url }}'>{{ job.title }}</a></span>
+	<div class="jobdetails">
+	  <div class="jobemployer"> at {{ job.employer.name }}</div>
+	  <div class="jobdates">[{{ job.started }} - {{ job.ended }}]</div>
+	</div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="rightcol">
+    <h1>Education & Training</h1>
+    <ul class="credentials">
+      {% for credential in site.credentials reversed %}
+      <li class="credential">
+	<div class="credentialname">{{ credential.name }}</div>
+	<div class="credentialinstitution">{{ credential.institution }}</div>
+	<div class="credentialdate">[{{ credential.date }}]</div>
+      </li>
+      {% endfor %}
+    </ul>
+    <h1>Projects</h1>
+    <ul class="projects">
+      {% for project in site.projects %}
+      <li class="project">
+	<div class="name">{{ project.name }}</div>
+	<div class="role">{{ project.role }} </div>
+	<div class="url"><a href='{{ project.web_url }}'>{{ project.web_url }}</a></div>
+	<div class="description"> {{ project.description }}</div>
+      </li>
+      {% endfor %}
+    </ul>
+    	
+  </div>
+</div>

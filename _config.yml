@@ -1,0 +1,18 @@
+name: My Cool Resume Site
+tagline: Some stuff about me that I think will convince you to hire me.
+header-color: #00FF00
+jobseeker:
+    first_name: Sum
+    last_name: Buddy
+    phone: (555) 555-5555
+    location: Peoria, Illinois
+    website: "http://example.com"
+    email: "jobseeker@example.com"
+collections:
+    jobs:
+        output: true
+    credentials:
+        output: false
+    projects:
+        output: false
+

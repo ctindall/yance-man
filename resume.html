@@ -1,0 +1,86 @@
+---
+---
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="./css/resume.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+    <meta charset="UTF-8">
+  </head>
+
+  <body>
+    <div class="resume">
+
+      <div class="header">
+	<div class="main_info">
+	  <div class="name">&gt; {{ site.jobseeker.first_name }} {{ site.jobseeker.last_name }}</div>
+  	  <div class="website">&gt; {{ site.jobseeker.website }}</div>
+	  <div class="email">&gt; {{ site.jobseeker.email }}</div>
+	  <div class="phone">&gt; {{ site.jobseeker.phone }}</div>
+	</div>
+      </div>
+      
+      <div class="body">
+
+	<div class="lcol">
+	  <h1>Professional & Volunteer Experience</h1>
+	  {% for job in site.jobs reversed %}
+	  <div class="entry">
+	    <div class="what">{{ job.title }}</div>
+	    {% if job.volunteer %} <div class="volunteer_tag">Volunteer</div> {% endif %}
+	    <div class="institution">{{ job.employer.name }}</div>
+	    <div class="when">[ {{ job.started }} - {{ job.ended }} ]</div>
+	    {% if job.blurbs %}
+	    <ul class="blurbs">
+	    {% for blurb in job.blurbs %}
+	    <li class="blurb">{{ blurb }}</li>
+	    {% endfor %}
+	    </ul>
+	    {% endif %}
+	  </div>
+	  {% endfor %}
+	</div>
+
+	<div class="rcol">
+	  <div class="education">
+	  <h1>Education & Training</h1>
+	  {% for credential in site.credentials reversed %}
+	  <div class="entry">
+	    <div class="what">{{ credential.name }}</div>
+	    {% if credential.volunteer %} <div class="volunteer_tag">Volunteer</div> {% endif %}
+	    <div class="institution">{{ credential.institution }}</div>
+	    <div class="when">[ {{ credential.date }} ]</div>
+	    {% if credential.blurbs %}
+	    <ul class="blurbs">
+	    {% for blurb in credential.blurbs %}
+	    <li class="blurb">{{ blurb }}</li>
+	    {% endfor %}
+	    </ul>
+	    {% endif %}
+	  </div>
+	  {% endfor %}
+	  </div>
+	  <div class="projects">
+	  <h1>Projects</h1>
+	  {% for project in site.projects %}
+	  <div class="project entry">
+	    <div class="name">{{ project.name }}</div>
+	    <div class="role">{{ project.role }} </div>
+	    <div class="url">{{ project.web_url }}</div>
+	    <div class="description"> {{ project.description }}</div>
+	  </div>
+	  {% endfor %}
+	  </div>
+	  <div class="calltoaction">
+	    This is just a static resume! You can visit <em>{{ site.jobseeker.website }}</em> for more detailed and up-to-date information.
+	  </div>
+	</div>
+
+	
+	
+      </div>
+
+    </div>
+  </body>
+</html>

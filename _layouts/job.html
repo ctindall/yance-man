@@ -1,0 +1,36 @@
+---
+layout: default
+---
+<div class="job">
+  <div class="jobtitle">{{ page.title }}</div>
+  <div class="jobdates">{{ page.started }} - {{ page.ended }}</div>
+  
+  {% if page.employer.name %}
+  <div class="jobemployer">{{ page.employer.name }}</div>
+  {% endif %}
+
+  {% if page.employer.location %}
+  <div class="joblocation">{{ page.employer.location }}</div>
+  {% endif %}
+
+  {% if page.employer.url %}
+  <div class="joburl"><a href='{{ page.employer.url }}'>{{ page.employer.url }}</a></div>
+  {% endif %}
+
+  <div class="jobnarrative">
+    {{ content }}
+  </div>
+</div>
+
+<hr />
+
+<div class="otherjobs">
+  <p>Some of {{ site.jobseeker.first_name }}'s other jobs</p>
+  <ul>
+    {% for job in site.jobs reversed %} 
+    <li class="otherjob">
+      <a href="{{ job.url }}">{{ job.title }} at {{ job.employer.name }}</a>
+    </li>
+    {% endfor %} 
+  </ul>
+</div>
